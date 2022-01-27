@@ -34,6 +34,8 @@ def __rec_helper(
         obj2 = list(obj2)
         if len(obj1) != len(obj2):
             return False
+        if len(obj1) == 0:
+            return True
 
     if isinstance(obj1, list) and not ignore_order:
         for sub_obj1, sub_obj2 in zip(obj1, obj2):
@@ -51,12 +53,15 @@ def __rec_helper(
                 sub_obj_2 = obj2[index2]
                 if __rec_helper(sub_obj_1, sub_obj_2, ignore_order):
                     equal_indexes = (index1, index2)
+                    break
+            if equal_indexes != (None, None):
+                break
 
         if equal_indexes == (None, None):
             return False
 
         index1, index2 = equal_indexes
-        obj1.pop(index2)
+        obj1.pop(index1)
         obj2.pop(index2)
 
         return __rec_helper(obj1, obj2, ignore_order)
