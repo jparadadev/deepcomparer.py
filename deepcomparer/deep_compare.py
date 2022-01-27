@@ -23,7 +23,7 @@ def __rec_helper(
 
     if isinstance(obj1, dict):
         for key in obj1.keys():
-            if key not in obj1:
+            if key not in obj2:
                 return False
             if not __rec_helper(obj1[key], obj2[key], ignore_order):
                 return False
