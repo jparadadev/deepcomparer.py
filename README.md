@@ -1,1 +1,3 @@
-# deepcomparer.py
+# Deepcomparer
+
+Deep compare python objects.
