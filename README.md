@@ -8,6 +8,14 @@
 
 Deep compare python structures like dictionaries, lists and iterables.
 
+## Getting Started
+
+### Installation
+
+```Shell
+  pip install deepcomparer
+```
+
 ### Usage
 
 ```python
