@@ -32,18 +32,6 @@ print(deep_compare(user, user2))
 user2['links']['pokehub'] = '@ash'
 print(deep_compare(user, user2))
 # output: True
-
-# Over iterable structures
-print(deep_compare([user, user2], [user, user2]))
-# output: True
-
-# Over iterable structures
-print(deep_compare([user, user2], [user2, user]))
-# output: False
-
-# Over unsorted iterable structures
-print(deep_compare([user, user2], [user2, user], ignore_order=True))
-# output: True
 ```
 
 
