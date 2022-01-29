@@ -6,11 +6,11 @@ def deep_compare(
         obj2: Any,
         ignore_order=False,
 ) -> bool:
-    res = __rec_helper(obj1, obj2, ignore_order)
+    res = _rec_helper(obj1, obj2, ignore_order)
     return res
 
 
-def __rec_helper(
+def _rec_helper(
         obj1: Any,
         obj2: Any,
         ignore_order: bool,
@@ -25,7 +25,7 @@ def __rec_helper(
         for key in obj1.keys():
             if key not in obj2:
                 return False
-            if not __rec_helper(obj1[key], obj2[key], ignore_order):
+            if not _rec_helper(obj1[key], obj2[key], ignore_order):
                 return False
         return True
 
@@ -39,7 +39,7 @@ def __rec_helper(
 
     if isinstance(obj1, list) and not ignore_order:
         for sub_obj1, sub_obj2 in zip(obj1, obj2):
-            if not __rec_helper(sub_obj1, sub_obj2, ignore_order):
+            if not _rec_helper(sub_obj1, sub_obj2, ignore_order):
                 return False
         return True
 
@@ -51,7 +51,7 @@ def __rec_helper(
             sub_obj_1 = obj1[index1]
             for index2 in range(len(obj2)):
                 sub_obj_2 = obj2[index2]
-                if __rec_helper(sub_obj_1, sub_obj_2, ignore_order):
+                if _rec_helper(sub_obj_1, sub_obj_2, ignore_order):
                     equal_indexes = (index1, index2)
                     break
             if equal_indexes != (None, None):
@@ -64,6 +64,9 @@ def __rec_helper(
         obj1.pop(index1)
         obj2.pop(index2)
 
-        return __rec_helper(obj1, obj2, ignore_order)
+        return _rec_helper(obj1, obj2, ignore_order)
+
+    if hasattr(obj1, '__dict__'):
+        return _rec_helper(vars(obj1), vars(obj2), ignore_order)
 
     return obj1 == obj2
