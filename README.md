@@ -6,7 +6,7 @@
 [![Downloads](https://pepy.tech/badge/deepcomparer)](https://pepy.tech/project/deepcomparer)
 [![GA](https://github.com/parada3desu/deepcomparer.py/workflows/Tests/badge.svg)](https://github.com/parada3desu/deepcomparer.py/actions/workflows/test.yml)
 
-Deep compare python structures like dictionaries, lists and iterables.
+Deep compare python objects and structures like dictionaries, lists and iterables.
 
 ## Getting Started
 
