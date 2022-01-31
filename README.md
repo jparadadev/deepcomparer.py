@@ -21,25 +21,32 @@ Deep compare python objects and structures like dictionaries, lists and iterable
 ```python
 from deepcomparer import deep_compare
 
+class Pokemon:
+    def __init__(self, name):
+        self.name = name
+
 user: dict = {
     'name': 'ash',
     'links': {
         'pokehub': '@ash'
-    }
+    },
+    'pokemons': [Pokemon('pikachu')]
 }
 
 user2: dict = {
     'name': 'ash',
     'links': {
-        'pokehub': '@brock'
-    }
+        'pokehub': '@ash'
+    },
+    'pokemons': [Pokemon('geodude')]
 }
 print(deep_compare(user, user2))
 # output: False
 
-user2['links']['pokehub'] = '@ash'
+user2['pokemons'] = [Pokemon('pikachu')]
 print(deep_compare(user, user2))
 # output: True
+
 ```
 
 
