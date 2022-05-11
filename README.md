@@ -1,10 +1,10 @@
 # Deepcomparer
 
 ![](https://img.shields.io/badge/PRs-welcome-green.svg)
-[![GitHub](https://img.shields.io/github/license/thekichune/deepcomparer.py)](https://github.com/thekichune/deepcomparer.py/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/jparadadev/deepcomparer.py)](https://github.com/jparadadev/deepcomparer.py/blob/main/LICENSE)
 [![Pypi](https://img.shields.io/pypi/v/deepcomparer)](https://pypi.org/project/deepcomparer/)
 [![Downloads](https://pepy.tech/badge/deepcomparer)](https://pepy.tech/project/deepcomparer)
-[![GA](https://github.com/thekichune/deepcomparer.py/workflows/Tests/badge.svg)](https://github.com/thekichune/deepcomparer.py/actions/workflows/test.yml)
+[![GA](https://github.com/jparadadev/deepcomparer.py/workflows/Tests/badge.svg)](https://github.com/jparadadev/deepcomparer.py/actions/workflows/test.yml)
 
 Deep compare python objects and structures like dictionaries, lists and iterables.
 
